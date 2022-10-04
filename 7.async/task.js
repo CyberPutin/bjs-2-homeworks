@@ -61,7 +61,7 @@ class AlarmClock {
             this.timerId = null;
         }
     }
-
+    
     printAlarms(){
         this.alarmCollection.forEach((x) => {
             console.log(x.id, " ", x.time);
@@ -69,10 +69,11 @@ class AlarmClock {
     }
 
     clearAlarms(){
-        this.alarmCollection.splice(0, this.alarmCollection.length);
+        this.alarmCollection = [];
         console.log("все удалены: ");
         console.table(this.alarmCollection);
-    }
+        this.stop();
+    } 
 }
 
 function testCase() {
